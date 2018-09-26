@@ -33,6 +33,10 @@ letters1 = name[0:2] #inclusive:exclusive
 print(letters1)
 letters2 = name[2:]
 print(letters2)
+
+letters2a = name[2:len(name)] #formal way of writting letters
+print(letters2a)
+
 letters3 = name[:2]
 print(letters3)
 
