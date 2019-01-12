@@ -127,7 +127,7 @@ def submit():
 	entry = tk.Entry(submitWin)
 	entry.grid(row = 1, column = 0)
 
-	title2 = tk.Label(submitWin, text="Enter in example question... blah", height = 2, width = 50)
+	title2 = tk.Label(submitWin, text="Enter Example Question, colen :, Answer", height = 2, width = 50)
 	title2.grid(row = 2, column = 0)
 
 	entry2 = tk.Entry(submitWin)
