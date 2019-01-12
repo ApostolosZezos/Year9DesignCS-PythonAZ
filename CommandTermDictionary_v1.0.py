@@ -112,7 +112,9 @@ def test2(event):
 		#print(str(simpleDefs[2]))
 		simpleDef.insert(tk.END, simpleDefs[2])
 
-#********************************************** Accesibility Functions ****************************************************
+#********************************************** Extra Functions ****************************************************
+
+#************************************************ Example Entry Window ****************************************************
 
 def submit():
 	global entry
@@ -127,7 +129,7 @@ def submit():
 	entry = tk.Entry(submitWin)
 	entry.grid(row = 1, column = 0)
 
-	title2 = tk.Label(submitWin, text="Enter Example Question, colen :, Answer", height = 2, width = 50)
+	title2 = tk.Label(submitWin, text="Enter Example Question, (colen) :, Answer", height = 2, width = 50)
 	title2.grid(row = 2, column = 0)
 
 	entry2 = tk.Entry(submitWin)
@@ -135,10 +137,8 @@ def submit():
 
 	submit = tk.Button(submitWin, text = "Submit", height = 2, width = 50, command = combine_funcs(save, submitWin.destroy))
 	submit.grid(row = 4, column = 0)
-	
-def deleteContent(pfile):
-    pfile.seek(0)
-    pfile.truncate()
+
+#************************************************ Save to .txt file and Rewrite it  ****************************************************
 
 def save():
 	person = entry.get()
@@ -159,9 +159,9 @@ def clear():
 	# simpleDefListbox.delete(0, tk.END)
 	# simpleDefListbox.insert(tk.END, commandTerm.get() + ": \n Test Definition")
 
-def delete(event):
-	commentsListbox.delete(0, tk.END)
-#************************************************ Second Row ****************************************************
+#************************************************ FIRST ROW ****************************************************
+
+#************************************************ Dropdown Menu ****************************************************
 
 commandTerm = tk.StringVar(root)
 commandTerm.set("Command Terms") 
@@ -169,19 +169,19 @@ selectCommandTerm = tk.OptionMenu(root, commandTerm, "Describe", "Evaluate", "Ju
 selectCommandTerm.config(bg = "#0856DB",  height = 2, width = 14)
 selectCommandTerm.grid(row = 0, column = 2, columnspan = 2, sticky = "N")
 
-#************************************************ Second Row ****************************************************
+#************************************************ Accesibility Button ****************************************************
 
 AccessibilityButton = tk.Button(root, text="High Contrast", height = 3, command = AccessibilityContrast)
 AccessibilityButton.config(highlightbackground = "#07329D")
 AccessibilityButton.grid(row = 0, column = 0)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Normal Contrast ****************************************************
 
 FontChange = tk.Button(root, text="Normal Colours", height = 3, command = NormalContrast)
 FontChange.config(highlightbackground = "#07329D")
 FontChange.grid(row = 0, column = 1)
 
-#************************************************ Second Row ****************************************************
+#************************************************ All Rubrics Link ****************************************************
 
 new = 1
 url1 = "https://www.easthartford.org/uploaded/ciba/Academics/All_MYP_Year_5_Assessment_Criteria_and_Rubrics.pdf"
@@ -193,7 +193,7 @@ LinkButton = tk.Button(root, text="All Rubrics", height = 3, command = openweb)
 LinkButton.config(highlightbackground = "#07329D")
 LinkButton.grid(row = 0, column = 4)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Rubric Breakdown Button ****************************************************
 
 new = 1
 url2 = "https://lh3.googleusercontent.com/TEouDE5ABkl4g1ap8G7PQdyJbCNfKxDwdDCjZQ4dkD5NmwQIQe3Opxt0ldqVUUp6720_Ukss9NBLxSi9Sk_Q5oGbz41V8Qsmsi36qR06YZC0sGSyk08n=w572"
@@ -205,8 +205,9 @@ RubricButton = tk.Button(root, text="Rubric's\nBreakdown", height = 3, command =
 RubricButton.config(highlightbackground = "#07329D")
 RubricButton.grid(row = 0, column = 5)
 
-#************************************************ Second Row ****************************************************
+#************************************************ SECOND ROW ****************************************************
 
+#************************************************ IB definition label ****************************************************
 
 ibDefLabel = tk.Label(root, text="IB Definition", width = 19, height =1)
 ibDefLabel.config(bg = "#69B4E1", font = "Times 23")
@@ -217,7 +218,7 @@ IbDefText = tk.Text(root, height = 4, width = 20)
 IbDefText.configure(state = "normal", bg = "#CBE7F8", highlightbackground = "#009299", font = "fixedsys 18")
 IbDefText.grid(row = 2, column = 0, columnspan = 3, padx = 3)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Simple Definition Label ****************************************************
 
 simpleDefLabel = tk.Label(root, text="Simple Definition", width = 19, height =1)
 simpleDefLabel.config(bg = "#69B4E1", font = "Times 23")
@@ -228,7 +229,7 @@ simpleDef = tk.Text(root, width = 20, height = 4)
 simpleDef.configure(state = "normal", bg = "#CBE7F8", highlightbackground = "#009299", font = "fixedsys 18")
 simpleDef.grid(row = 2, column = 3, columnspan = 3, padx = 5)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Scrollbar and Example display ****************************************************
 
 #commentsListbox = tk.Listbox(root, width = 44, height = 10)
 #commentsListbox.insert(i1data)
@@ -247,19 +248,19 @@ exampleBox.insert('end', open("save.txt",'r').read())
 exampleBox.config(yscrollcommand = scrollbar.set)
 scrollbar.config(command = exampleBox.yview)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Submit Example Button ****************************************************
 
 submitButton = tk.Button(root, text="Submit", height = 2, width = 8, command = submit)
 submitButton.config(highlightbackground = "#0856DB")
 submitButton.grid(row = 5, column = 4)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Clear Example File Button ****************************************************
 
 ClearButton = tk.Button(root, text = "Clear",  height = 2, width = 8, command = clear)
 ClearButton.config(highlightbackground = "#0856DB")
 ClearButton.grid(row = 5, column = 5)
 
-#************************************************ Second Row ****************************************************
+#************************************************ Developer's Website Link ****************************************************
 new = 1
 url3 = "https://sites.google.com/ucc.on.ca/year9designcoding-azezos/unit-1/developing-ideas?authuser=0"
 
